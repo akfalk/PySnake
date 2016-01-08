@@ -29,9 +29,13 @@
     <Compile Include="GameArena.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="PlayerInput.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Raspberry.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Test_KeyboardInput.py" />
     <Compile Include="raspberry_snake.py">
       <SubType>Code</SubType>
     </Compile>

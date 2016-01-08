@@ -29,7 +29,9 @@ class PyGameArena(GameArena):
     def __init__(self,size, blockSize):
         GameArena.__init__(self, size)
         self.blockSize = blockSize
-        self.playSurface = pygame.display.set_mode((640, 480))
+        width = size[0] * blockSize
+        height = size[1] * blockSize
+        self.playSurface = pygame.display.set_mode((width, height))
         pygame.display.set_caption('Raspberry Snake')
 
     def createRaspberry(self):
@@ -71,6 +73,6 @@ class PyGameArena(GameArena):
         gameOverRect.midtop = (320, 10)
         self.playSurface.blit(gameOverSurf, gameOverRect)
         pygame.display.flip()
-        time.sleep(5)
+        time.sleep(1)
         pygame.quit()
         sys.exit()

@@ -10,6 +10,7 @@ import pygame, sys, time, random
 from pygame.locals import *
 from Block import PygameBlock
 from GameArena import PyGameArena
+from PlayerInput import KeyboardInput
 
 pygame.init()
 
@@ -27,7 +28,9 @@ raspberry = arena.createRaspberry()
 # define input keys for the two snakes
 playerInput_1 = {'right':K_RIGHT, 'left':K_LEFT, 'up':K_UP, 'down':K_DOWN}
 playerInput_2 = {'right':ord('d'), 'left':ord('a'), 'up':ord('w'), 'down':ord('s')}
-playerInput = [playerInput_1, playerInput_2]
+p1 = KeyboardInput(playerInput_1)
+p2 = KeyboardInput(playerInput_2)
+playerInput = [p1, p2]
 # create the snakes
 snakeList = arena.createSnakes(playerInput)
 

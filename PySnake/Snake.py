@@ -13,19 +13,7 @@ class Snake():
         self.life = 3
 
     def getDirection(self, eventList):
-        changeDirection = self.direction
-        for event in eventList:
-            if event.type == KEYDOWN:
-                if event.key == self.playerInput['right']:
-                    changeDirection = 'right'
-                if event.key == self.playerInput['left']:
-                    changeDirection = 'left'
-                if event.key == self.playerInput['up']:
-                    changeDirection = 'up'
-                if event.key == self.playerInput['down']:
-                    changeDirection = 'down'
-                if event.key == K_ESCAPE:
-                    pygame.event.post(pygame.event.Event(QUIT))
+        changeDirection = self.playerInput.getPlayerInput(eventList)
         if changeDirection == 'right' and not self.direction == 'left':
             self.direction = changeDirection
         if changeDirection == 'left' and not self.direction == 'right':
